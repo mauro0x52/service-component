@@ -1,0 +1,43 @@
+{
+    "name" : "HelloWorld",
+    "host" : "http://localhost",
+    "port" : 8000,
+    "services" : {
+        "hello" : {
+            "method"    : "get",
+            "path"       : "/hello/:language/:name",
+            "bind"      : {
+                "component" : "Writer",
+                "service"   : "write"
+            }
+        }
+    },
+    "components" : {
+        "Writer" : {
+            "host" : "http://localhost",
+            "port" : 8001,
+            "services" : {
+                "write" : {
+                    "method" : "get",
+                    "path"    : "/write/:language/:name"
+                }
+            },
+            "bind" : {
+                "translate" : {
+                    "component" : "Translator",
+                    "service"   : "translate"
+                }
+            }
+        },
+        "Translator" : {
+            "host" : "http://localhost",
+            "port" : 8002,
+            "services" : {
+                "translate" : {
+                    "method" : "get",
+                    "path"    : "/translate/:language"
+                }
+            }
+        }
+    }
+}

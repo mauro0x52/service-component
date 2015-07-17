@@ -1,0 +1,56 @@
+{
+    "name" : "DeployerComposite",
+    "host" : "http://localhost",
+    "port" : 8000,
+    "services" : {
+        "deploy" : {
+            "method"    : "get",
+            "path"      : "/deploy/:port",
+            "bind"      : {
+                "component" : "Deployer",
+                "service"   : "deploy"
+            }
+        },
+        "ping" : {
+            "method"    : "get",
+            "path"      : "/ping/:port",
+            "bind"      : {
+                "component" : "Deployer",
+                "service"   : "ping"
+            }
+        }
+    },
+    "components" : {
+        "Deployer" : {
+            "host" : "http://localhost",
+            "port" : 8001,
+            "services" : {
+                "deploy" : {
+                    "method" : "get",
+                    "path"   : "/deploy/:port"
+                },
+                "ping" : {
+                    "method" : "get",
+                    "path"   : "/ping/:port"
+                }
+            },
+            "bind" : {
+                "ping" : {
+                    "component" : "MultiDeploy",
+                    "service"   : "ping"
+                }
+            }
+        },
+        "MultiDeploy": {
+            "isComposite" : "true",
+            "multipleInstances": "true",
+            "instances": {},
+            "services": {
+                "ping": {
+                    "method": "get",
+                    "path": "/ping"
+                }
+            }
+        }
+    }
+}

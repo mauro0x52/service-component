@@ -1,0 +1,25 @@
+{
+    "name" : "Deployer",
+    "host" : "http://localhost",
+    "services" : {
+        "deploy" : {
+            "method"    : "get",
+            "url"       : "/ping",
+            "bind"      : {
+                "component" : "Pinger",
+                "service"   : "ping"
+            }
+        }
+    },
+    "components" : {
+        "Pinger" : {
+            "host" : "http://localhost",
+            "services" : {
+                "instantiate" : {
+                    "method" : "get",
+                    "url"    : "/ping"
+                }
+            }
+        }
+    }
+}

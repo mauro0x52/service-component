@@ -1,0 +1,21 @@
+{
+  "name": "sca",
+  "description": "A simple Service Component Architecture framework",
+  "version": "0.0.1",
+  "contributors": [
+    {
+      "name": "Mauro Ribeiro",
+      "email": "mauro0x52@gmail.com"
+    }
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mauro0x52/sca"
+  },
+  "dependencies": {
+    "body-parser": "^1.13.2",
+    "express": "^4.13.1",
+    "needle": "^0.10.0"
+  }
+}
