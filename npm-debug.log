@@ -66,31 +66,31 @@
 29 silly publish   author: { name: 'Mauro Ribeiro' },
 29 silly publish   readme: 'SCA.js\n======\n\nA simple Service Oriented Architecture (SCA) framework for Node.JS\n\nWhat is SCA?\n------------\n\nSCA is a modeling specification for composing systems according to the principles of Service Oriented Architecture (SOA). SCA separates the implementation concerns into three artifacts: \n\n- Components: implement its business function\n- Composites: assemble various components together to create business solutions\n- Services: create an interface for remote access to component and composite functions\n\nComposites, services, and their relations with components are defined in a dynamic descriptor file, so every component can be implemented regardless how it will communicate with other components.\n\nWhat is SCA.js?\n---------------\n\nSCA.js is a simple way to build SCA systems using RESTful webservices with JSON communication.\n\nThe directory tree for a HelloWorld SCA.js app would be:\n\n```\nHelloWorld/\n├── components/\n│   ├── Writer.js\n│   └── Translator.js\n├── composite.json\n└── HelloWorld.js\n```\n\nHelloWorld.js is the main interface to the real world. It builds the composite described in composite.json.\nTranslator.js translate "hello" to different languages.\nWriter.js gets writes "{hello} {name}!", using the "hello" translated from the translator.\n\nThe composite.json file can be summarized like this:\n\n```\n{\n    "name" : "HelloWorld",\n    "services" : {\n        "hello" : {\n            "path"       : "/hello/:language/:name",\n            "bind"      : {\n                "component" : "Writer",\n                "service"   : "write"\n            }\n        }\n    },\n    "components" : {\n        "Writer" : {\n            "services" : {\n                "write" : {\n                    "path"    : "/write/:language/:name"\n                }\n            },\n            "bind" : {\n                "translate" : {\n                    "component" : "Translator",\n                    "service"   : "translate"\n                }\n            }\n        },\n        "Translator" : {\n            "services" : {\n                "translate" : {\n                    "path"    : "/translate/:language"\n                }\n            }\n        }\n    }\n}\n\n```\n',
 29 silly publish   readmeFilename: 'README.md',
-29 silly publish   gitHead: 'c11052852eb01aec3824ad18897c2ccbd4bb9611',
+29 silly publish   gitHead: 'a4b0054e0858c748461f3a57f13860ab939b953a',
 29 silly publish   _id: 'sca.js@0.0.1',
 29 silly publish   _shasum: '2c634976295c4653b1295fbd714a7db4ba3dbde6',
 29 silly publish   _from: './' }
 30 verbose request where is /sca.js
 31 verbose request registry https://registry.npmjs.org/
-32 verbose request id a515bdbbd2d33179
+32 verbose request id b1bee017a62882ab
 33 verbose url raw /sca.js
 34 verbose url resolving [ 'https://registry.npmjs.org/', './sca.js' ]
 35 verbose url resolved https://registry.npmjs.org/sca.js
 36 verbose request where is https://registry.npmjs.org/sca.js
-37 info trying registry request attempt 1 at 21:01:29
+37 info trying registry request attempt 1 at 21:02:36
 38 http PUT https://registry.npmjs.org/sca.js
 39 http 403 https://registry.npmjs.org/sca.js
 40 verbose headers { 'content-type': 'application/json',
 40 verbose headers   'cache-control': 'max-age=60',
 40 verbose headers   'content-length': '95',
 40 verbose headers   'accept-ranges': 'bytes',
-40 verbose headers   date: 'Fri, 17 Jul 2015 01:01:27 GMT',
+40 verbose headers   date: 'Fri, 17 Jul 2015 01:02:34 GMT',
 40 verbose headers   via: '1.1 varnish',
 40 verbose headers   connection: 'keep-alive',
-40 verbose headers   'x-served-by': 'cache-ord1724-ORD',
+40 verbose headers   'x-served-by': 'cache-ord1728-ORD',
 40 verbose headers   'x-cache': 'MISS',
 40 verbose headers   'x-cache-hits': '0',
-40 verbose headers   'x-timer': 'S1437094886.326563,VS0,VE1071' }
+40 verbose headers   'x-timer': 'S1437094953.803027,VS0,VE1055' }
 41 error publish Failed PUT 403
 42 error Error: "You cannot publish over the previously published version 0.0.1." : sca.js
 42 error     at RegClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
