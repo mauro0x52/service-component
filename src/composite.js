@@ -2,7 +2,7 @@ var fs = require('fs');
 var needle = require('needle');
 var path = require('path');
 var Artifacts = require('./artifacts.js');
-var WS = require('./libs/ws.js');
+var WS = require('./ws.js');
 
 var Composite = function (name, file) {     
     var filePath = file ? file : './composite.json';

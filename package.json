@@ -1,21 +1,41 @@
 {
-  "name": "sca",
+  "name": "sca.js",
   "description": "A simple Service Component Architecture framework",
   "version": "0.0.1",
   "contributors": [
-    {
-      "name": "Mauro Ribeiro",
-      "email": "mauro0x52@gmail.com"
-    }
+    "Mauro Ribeiro <mauro0x52@gmail.com>"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/mauro0x52/sca"
+    "url": "https://github.com/mauro0x52/sca.js"
   },
   "dependencies": {
     "body-parser": "^1.13.2",
     "express": "^4.13.1",
     "needle": "^0.10.0"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/mauro0x52/sca.js/issues"
+  },
+  "homepage": "https://github.com/mauro0x52/sca.js",
+  "main": "sca.js",
+  "directories": {
+    "example": "examples"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "service",
+    "component",
+    "architecture",
+    "service",
+    "oriented",
+    "architecture",
+    "REST",
+    "webservice"
+  ],
+  "author": "Mauro Ribeiro"
 }

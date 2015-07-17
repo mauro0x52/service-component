@@ -1,7 +1,7 @@
 var fs = require('fs');
 var needle = require('needle');
 var path = require('path');
-var WS = require('./libs/ws.js');
+var WS = require('./ws.js');
 var Artifacts = require('./artifacts.js');
 
 var Component = function (name, file) {
