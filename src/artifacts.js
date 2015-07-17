@@ -34,7 +34,7 @@ Artifacts.prototype.save = function (serviceName) {
 };
 
 Artifacts.prototype.setProperty = function (name, value) {
-    if (this.data.hasOwnAttribute('properties') == false) = this.data.properties = {};
+    if (this.data.hasOwnAttribute('properties') == false) this.data.properties = {};
     this.data.properties[name] = value;
 }
 
