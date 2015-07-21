@@ -39,7 +39,7 @@ Artifacts.prototype.setProperty = function (name, value) {
 }
 
 Artifacts.prototype.getProperty = function (name) {
-    return this.data.properties && this.data.properties[name] ? this.data.properties.name : null;
+    return this.data.hasOwnProperty('properties') && this.data.properties.hasOwnProperty(name) ? this.data.properties[name] : {};
 }
 
 module.exports = Artifacts;
