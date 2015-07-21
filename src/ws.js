@@ -5,6 +5,15 @@ var WS = function (params) {
     var self = this;
     this.express = new express();
     
+    var setHeaders = function(req, res, next) {
+        res.header('Access-Control-Allow-Origin', '*');
+        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+        res.header("Access-Control-Allow-Headers", "X-Requested-With, Content-Type");
+        res.contentType('json');
+        next();
+    };
+    
+    this.express.use(setHeaders);
     this.express.use(bodyParser.json());
     this.express.use(bodyParser.urlencoded({extended : true}));
     
@@ -17,8 +26,6 @@ WS.prototype.route = function (params) {
     this.removeRoute(params.path);
     this.routes[params.path] = { path : params.path, method : params.method };
     this.express[params.method](params.path, function (request, response) {    
-        response.contentType('json');
-        response.header('Access-Control-Allow-Origin', '*');    
         params.handler(request, function (data) { response.send(data) });
     });
 }
