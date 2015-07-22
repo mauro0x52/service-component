@@ -28,7 +28,7 @@ var Component = function (name, file) {
         path : '/sync-artifacts',
         handler : function (request, reply) {
             reply({message : 'ok'});
-            self.applyArtifacts(request.payload);
+            self.applyArtifacts(request.body.artifacts);
         } 
     });
     
@@ -38,7 +38,7 @@ var Component = function (name, file) {
 Component.prototype.syncArtifacts = function () {
     this.artifacts.save();
     var url = this.composite.host + ':' + this.composite.port + '/sync-artifacts';
-    needle.post(url, this.artifacts.data, function (error, data) {
+    needle.post(url, { artifacts : this.artifacts.data }, function (error, data) {
         if (error) throw error;
     });
 }
@@ -106,7 +106,7 @@ var bindConsumer = function (serviceComponent, service) {
             urlParams = arguments[shift];
             postData = arguments[shift+1];
             cb = arguments[shift+2];
-        }
+        }        
                         
         if (instance) {
             var url = instance.host + ':' + instance.port + service.path;
@@ -123,13 +123,19 @@ var bindConsumer = function (serviceComponent, service) {
         
         if (service.method == 'get') {
             needle.get(url, function (error, data) {
-                if (error) cb(error);
-                if (data) cb(data.body);
+                if (cb) {
+                    if (error) cb(error);
+                    if (data) cb(data.body);
+                }
+                if (error) throw error;
             });
         } else if (service.method == 'post') {
             needle.post(url, postData, function (error, data) {
-                if (error) cb(error);
-                if (data) cb(data.body);
+                if (cb) {
+                    if (error) cb(error);
+                    if (data) cb(data.body);
+                }
+                if (error) throw error;
             });
         } 
     }

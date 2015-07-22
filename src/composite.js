@@ -21,7 +21,7 @@ var Composite = function (name, file) {
         path : '/sync-artifacts',
         handler : function (request, reply) {
             reply({message : 'ok'});
-            self.applyArtifacts(request.body);
+            self.applyArtifacts(request.body.artifacts);
             self.syncArtifacts();
         } 
     });
@@ -36,7 +36,7 @@ Composite.prototype.syncArtifacts = function () {
     for (var i in components) {
         if (!components[i].isComposite) {
             var url = components[i].host + ':' + components[i].port + '/sync-artifacts';
-            needle.post(url, this.artifacts.data);
+            needle.post(url, {artifacts : this.artifacts.data});
         }
     }
 }
@@ -84,7 +84,7 @@ var urlBind = function(bindComponent, service) {
                     if (data) reply(data.body);
                 });
             } else if (method == 'post') {
-                needle.post(url, request.body, function (error, data) {
+                needle.post(url, request.body, {json : true}, function (error, data) {
                     if (error) reply(error);
                     if (data) reply(data.body);
                 });
