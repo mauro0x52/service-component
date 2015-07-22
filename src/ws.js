@@ -14,8 +14,8 @@ var WS = function (params) {
     };
     
     this.express.use(setHeaders);
-    this.express.use(bodyParser.json());
-    this.express.use(bodyParser.urlencoded({extended : true}));
+    this.express.use(bodyParser.json({limit: '50mb', parameterLimit: 1000000}));
+    this.express.use(bodyParser.urlencoded({limit: '50mb', parameterLimit: 1000000, extended : true}));
     
     this.routes = {};
 
