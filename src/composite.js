@@ -80,12 +80,18 @@ var urlBind = function(bindComponent, service) {
             
             if (method == 'get') {
                 needle.get(url, function (error, data) {
-                    if (error) reply(error);
+                    if (error) {
+                        reply(error);
+                        throw error;
+                    }
                     if (data) reply(data.body);
                 });
             } else if (method == 'post') {
                 needle.post(url, request.body, {json : true}, function (error, data) {
-                    if (error) reply(error);
+                    if (error) {
+                        reply(error);
+                        throw error;
+                    }
                     if (data) reply(data.body);
                 });
             } 
