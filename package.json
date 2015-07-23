@@ -1,7 +1,7 @@
 {
   "name": "sca.js",
   "description": "A simple Service Component Architecture framework for Node.js",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "contributors": [
     "Mauro Ribeiro <mauro0x52@gmail.com>"
   ],

@@ -39,7 +39,10 @@ Component.prototype.syncArtifacts = function () {
     this.artifacts.save();
     var url = this.composite.host + ':' + this.composite.port + '/sync-artifacts';
     needle.post(url, { artifacts : this.artifacts.data }, function (error, data) {
-        if (error) throw error;
+        if (error) {
+            console.log('Error when syncing artifacts');
+            console.log(error);
+        }
     });
 }
 
@@ -119,17 +122,26 @@ var bindConsumer = function (serviceComponent, service) {
         }
         
         var missingArguments = url.replace(/http\:\/\/[^\/]*/,'').match(/\:[^/]*/gi);
-        if (missingArguments) throw { name : 'MissingArguments', message : 'argument ' +  missingArguments[0] + ' is missing' };
+        if (missingArguments) {
+            console.log('Missing arguments');
+            console.log({ name : 'MissingArguments', message : 'argument ' +  missingArguments[0] + ' is missing' });
+        }
         
         if (service.method == 'get') {
             needle.get(url, { timeout : 0, json : true}, function (error, data) {
                 if (cb && data) cb(data.body);
-                if (error) console.log('Some error occured with '+url);
+                if (error) {
+                    console.log('Some error occured with '+url);
+                    console.log(error);
+                }
             });
         } else if (service.method == 'post') {
             needle.post(url, postData, { timeout : 0, json : true}, function (error, data) {
                 if (cb && data) cb(data.body);
-                if (error) console.log('Some error occured with '+url);
+                if (error) {
+                    console.log('Some error occured with '+url);
+                    console.log(error);
+                }
             });
         } 
     }

@@ -82,6 +82,7 @@ var urlBind = function(bindComponent, service) {
                 needle.get(url, {timeout : 0, json : true}, function (error, data) {
                     if (error) {
                         console.log('Some error occured with '+url);
+                        console.log(error);
                     }
                     if (data) reply(data.body);
                 });
@@ -89,6 +90,7 @@ var urlBind = function(bindComponent, service) {
                 needle.post(url, request.body, { timeout : 0, json : true}, function (error, data) {
                     if (error) {
                         console.log('Some error occured with '+url);
+                        console.log(error);
                     }
                     if (data) reply(data.body);
                 });
