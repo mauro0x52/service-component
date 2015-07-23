@@ -122,20 +122,14 @@ var bindConsumer = function (serviceComponent, service) {
         if (missingArguments) throw { name : 'MissingArguments', message : 'argument ' +  missingArguments[0] + ' is missing' };
         
         if (service.method == 'get') {
-            needle.get(url, function (error, data) {
-                if (cb) {
-                    if (error) cb(error);
-                    if (data) cb(data.body);
-                }
-                if (error) throw error;
+            needle.get(url, { timeout : 0, json : true}, function (error, data) {
+                if (cb && data) cb(data.body);
+                if (error) console.log('Some error occured with '+url);
             });
         } else if (service.method == 'post') {
-            needle.post(url, postData, function (error, data) {
-                if (cb) {
-                    if (error) cb(error);
-                    if (data) cb(data.body);
-                }
-                if (error) throw error;
+            needle.post(url, postData, { timeout : 0, json : true}, function (error, data) {
+                if (cb && data) cb(data.body);
+                if (error) console.log('Some error occured with '+url);
             });
         } 
     }
