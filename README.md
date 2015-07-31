@@ -1,7 +1,7 @@
-service-component for Node.js
+Service Component for Node.js
 =============================
 
-A simple Service Oriented Architecture (SCA) framework for Node.JS
+A simple Service Component Architecture (SCA) framework for Node.JS
 
 What is SCA?
 ------------
@@ -19,7 +19,7 @@ What is service-component?
 
 It is a simple way to build SCA systems using RESTful webservices with JSON communication.
 
-The directory tree for a HelloWorld service-component app would be:
+In the examples folder, you can find the HelloWorld service-component app, which the directory tree is something like:
 
 ```
 HelloWorld/
