@@ -20,79 +20,76 @@
 8 verbose parsed url   href: '.' }
 9 silly lockFile 3a52ce78- .
 10 verbose lock . /home/mauro/.npm/3a52ce78-.lock
-11 verbose tar pack [ '/home/mauro/.npm/sca.js/0.0.3/package.tgz', '.' ]
-12 verbose tarball /home/mauro/.npm/sca.js/0.0.3/package.tgz
+11 verbose tar pack [ '/home/mauro/.npm/service-component/0.0.3/package.tgz', '.' ]
+12 verbose tarball /home/mauro/.npm/service-component/0.0.3/package.tgz
 13 verbose folder .
-14 info prepublish sca.js@0.0.3
+14 info prepublish service-component@0.0.3
 15 silly lockFile 1f1177db-tar tar://.
 16 verbose lock tar://. /home/mauro/.npm/1f1177db-tar.lock
-17 silly lockFile 9eb0bc32-uro-npm-sca-js-0-0-3-package-tgz tar:///home/mauro/.npm/sca.js/0.0.3/package.tgz
-18 verbose lock tar:///home/mauro/.npm/sca.js/0.0.3/package.tgz /home/mauro/.npm/9eb0bc32-uro-npm-sca-js-0-0-3-package-tgz.lock
+17 silly lockFile 151abf26-vice-component-0-0-3-package-tgz tar:///home/mauro/.npm/service-component/0.0.3/package.tgz
+18 verbose lock tar:///home/mauro/.npm/service-component/0.0.3/package.tgz /home/mauro/.npm/151abf26-vice-component-0-0-3-package-tgz.lock
 19 silly lockFile 1f1177db-tar tar://.
 20 silly lockFile 1f1177db-tar tar://.
-21 silly lockFile 9eb0bc32-uro-npm-sca-js-0-0-3-package-tgz tar:///home/mauro/.npm/sca.js/0.0.3/package.tgz
-22 silly lockFile 9eb0bc32-uro-npm-sca-js-0-0-3-package-tgz tar:///home/mauro/.npm/sca.js/0.0.3/package.tgz
-23 silly lockFile 83f901df-e-mauro-npm-sca-js-0-0-3-package /home/mauro/.npm/sca.js/0.0.3/package
-24 verbose lock /home/mauro/.npm/sca.js/0.0.3/package /home/mauro/.npm/83f901df-e-mauro-npm-sca-js-0-0-3-package.lock
-25 silly lockFile 83f901df-e-mauro-npm-sca-js-0-0-3-package /home/mauro/.npm/sca.js/0.0.3/package
-26 silly lockFile 83f901df-e-mauro-npm-sca-js-0-0-3-package /home/mauro/.npm/sca.js/0.0.3/package
+21 silly lockFile 151abf26-vice-component-0-0-3-package-tgz tar:///home/mauro/.npm/service-component/0.0.3/package.tgz
+22 silly lockFile 151abf26-vice-component-0-0-3-package-tgz tar:///home/mauro/.npm/service-component/0.0.3/package.tgz
+23 silly lockFile ac196c09--service-component-0-0-3-package /home/mauro/.npm/service-component/0.0.3/package
+24 verbose lock /home/mauro/.npm/service-component/0.0.3/package /home/mauro/.npm/ac196c09--service-component-0-0-3-package.lock
+25 silly lockFile ac196c09--service-component-0-0-3-package /home/mauro/.npm/service-component/0.0.3/package
+26 silly lockFile ac196c09--service-component-0-0-3-package /home/mauro/.npm/service-component/0.0.3/package
 27 silly lockFile 3a52ce78- .
 28 silly lockFile 3a52ce78- .
-29 silly publish { name: 'sca.js',
+29 silly publish { name: 'service-component',
 29 silly publish   description: 'A simple Service Component Architecture framework for Node.js',
 29 silly publish   version: '0.0.3',
 29 silly publish   contributors: [ { name: 'Mauro Ribeiro', email: 'mauro0x52@gmail.com' } ],
 29 silly publish   license: 'MIT',
-29 silly publish   repository: { type: 'git', url: 'https://github.com/mauro0x52/sca.js' },
-29 silly publish   dependencies:
-29 silly publish    { 'body-parser': '^1.13.2',
-29 silly publish      express: '^4.13.1',
-29 silly publish      needle: '^0.10.0' },
-29 silly publish   bugs: { url: 'https://github.com/mauro0x52/sca.js/issues' },
-29 silly publish   homepage: 'https://github.com/mauro0x52/sca.js',
-29 silly publish   main: 'sca.js',
+29 silly publish   repository:
+29 silly publish    { type: 'git',
+29 silly publish      url: 'https://github.com/mauro0x52/service-component' },
+29 silly publish   dependencies: { 'body-parser': '1.13.2', express: '4.13.1', needle: '0.10.0' },
+29 silly publish   bugs: { url: 'https://github.com/mauro0x52/service-component/issues' },
+29 silly publish   homepage: 'https://github.com/mauro0x52/service-component',
+29 silly publish   main: 'service-component.js',
 29 silly publish   directories: { example: 'examples' },
 29 silly publish   devDependencies: {},
 29 silly publish   scripts: { test: 'echo "Error: no test specified" && exit 1' },
 29 silly publish   keywords:
-29 silly publish    [ 'service',
-29 silly publish      'component',
-29 silly publish      'architecture',
-29 silly publish      'service',
-29 silly publish      'oriented',
-29 silly publish      'architecture',
+29 silly publish    [ 'service component architecture',
+29 silly publish      'SCA',
+29 silly publish      'service oriented architecture',
+29 silly publish      'SOA',
 29 silly publish      'REST',
 29 silly publish      'webservice' ],
 29 silly publish   author: { name: 'Mauro Ribeiro' },
-29 silly publish   readme: 'SCA.js\n======\n\nA simple Service Oriented Architecture (SCA) framework for Node.JS\n\nWhat is SCA?\n------------\n\nSCA is a modeling specification for composing systems according to the principles of Service Oriented Architecture (SOA). SCA separates the implementation concerns into three artifacts: \n\n- Components: implement its business function\n- Composites: assemble various components together to create business solutions\n- Services: create an interface for remote access to component and composite functions\n\nComposites, services, and their relations with components are defined in a dynamic descriptor file, so every component can be implemented regardless how it will communicate with other components.\n\nWhat is SCA.js?\n---------------\n\nSCA.js is a simple way to build SCA systems using RESTful webservices with JSON communication.\n\nThe directory tree for a HelloWorld SCA.js app would be:\n\n```\nHelloWorld/\n├── components/\n│   ├── Writer.js\n│   └── Translator.js\n├── composite.json\n└── HelloWorld.js\n```\n\nHelloWorld.js is the main interface to the real world. It builds the composite described in composite.json.\nTranslator.js translate "hello" to different languages.\nWriter.js gets writes "{hello} {name}!", using the "hello" translated from the translator.\n\nThe composite.json file can be summarized like this:\n\n```\n{\n    "name" : "HelloWorld",\n    "services" : {\n        "hello" : {\n            "path"       : "/hello/:language/:name",\n            "bind"      : {\n                "component" : "Writer",\n                "service"   : "write"\n            }\n        }\n    },\n    "components" : {\n        "Writer" : {\n            "services" : {\n                "write" : {\n                    "path"    : "/write/:language/:name"\n                }\n            },\n            "bind" : {\n                "translate" : {\n                    "component" : "Translator",\n                    "service"   : "translate"\n                }\n            }\n        },\n        "Translator" : {\n            "services" : {\n                "translate" : {\n                    "path"    : "/translate/:language"\n                }\n            }\n        }\n    }\n}\n\n```\n',
+29 silly publish   readme: 'service-component for Node.js\n=============================\n\nA simple Service Oriented Architecture (SCA) framework for Node.JS\n\nWhat is SCA?\n------------\n\nSCA is a modeling specification for composing systems according to the principles of Service Oriented Architecture (SOA). SCA separates the implementation concerns into three artifacts: \n\n- Components: implement its business function\n- Composites: assemble various components together to create business solutions\n- Services: create an interface for remote access to component and composite functions\n\nComposites, services, and their relations with components are defined in a dynamic descriptor file, so every component can be implemented regardless how it will communicate with other components.\n\nWhat is service-component?\n--------------------------------------\n\nIt is a simple way to build SCA systems using RESTful webservices with JSON communication.\n\nThe directory tree for a HelloWorld service-component app would be:\n\n```\nHelloWorld/\n├── components/\n│   ├── Writer.js\n│   └── Translator.js\n├── composite.json\n└── HelloWorld.js\n```\n\nHelloWorld.js is the main interface to the real world. It builds the composite described in composite.json.\nTranslator.js translate "hello" to different languages.\nWriter.js gets writes "{hello} {name}!", using the "hello" translated from the translator.\n\nThe composite.json file can be summarized like this:\n\n```\n{\n    "name" : "HelloWorld",\n    "services" : {\n        "hello" : {\n            "path"       : "/hello/:language/:name",\n            "bind"      : {\n                "component" : "Writer",\n                "service"   : "write"\n            }\n        }\n    },\n    "components" : {\n        "Writer" : {\n            "services" : {\n                "write" : {\n                    "path"    : "/write/:language/:name"\n                }\n            },\n            "bind" : {\n                "translate" : {\n                    "component" : "Translator",\n                    "service"   : "translate"\n                }\n            }\n        },\n        "Translator" : {\n            "services" : {\n                "translate" : {\n                    "path"    : "/translate/:language"\n                }\n            }\n        }\n    }\n}\n\n```\n',
 29 silly publish   readmeFilename: 'README.md',
-29 silly publish   gitHead: '8df37cc22b43ecfe170d8025c33f6bc8fdbf752f',
-29 silly publish   _id: 'sca.js@0.0.3',
-29 silly publish   _shasum: '6a9c0d0735c0d1314543d4894bc286898182360f',
+29 silly publish   gitHead: '3d843ca37ae1b9787a37df330dc2ec29a774756b',
+29 silly publish   _id: 'service-component@0.0.3',
+29 silly publish   _shasum: 'b337d5599855ddb5601711504adeb008f886dce8',
 29 silly publish   _from: '.' }
-30 verbose request where is /sca.js
+30 verbose request where is /service-component
 31 verbose request registry https://registry.npmjs.org/
-32 verbose request id 4a9f7b16bc16634e
-33 verbose url raw /sca.js
-34 verbose url resolving [ 'https://registry.npmjs.org/', './sca.js' ]
-35 verbose url resolved https://registry.npmjs.org/sca.js
-36 verbose request where is https://registry.npmjs.org/sca.js
-37 info trying registry request attempt 1 at 09:03:10
-38 http PUT https://registry.npmjs.org/sca.js
-39 http 403 https://registry.npmjs.org/sca.js
+32 verbose request id eb97aa57d6c7cac4
+33 verbose url raw /service-component
+34 verbose url resolving [ 'https://registry.npmjs.org/', './service-component' ]
+35 verbose url resolved https://registry.npmjs.org/service-component
+36 verbose request where is https://registry.npmjs.org/service-component
+37 info trying registry request attempt 1 at 12:27:50
+38 http PUT https://registry.npmjs.org/service-component
+39 http 403 https://registry.npmjs.org/service-component
 40 verbose headers { 'content-type': 'application/json',
 40 verbose headers   'cache-control': 'max-age=60',
 40 verbose headers   'content-length': '95',
 40 verbose headers   'accept-ranges': 'bytes',
-40 verbose headers   date: 'Fri, 17 Jul 2015 13:08:03 GMT',
+40 verbose headers   date: 'Fri, 31 Jul 2015 16:27:49 GMT',
 40 verbose headers   via: '1.1 varnish',
 40 verbose headers   connection: 'keep-alive',
-40 verbose headers   'x-served-by': 'cache-dfw1835-DFW',
+40 verbose headers   'x-served-by': 'cache-iad2141-IAD',
 40 verbose headers   'x-cache': 'MISS',
 40 verbose headers   'x-cache-hits': '0',
-40 verbose headers   'x-timer': 'S1437138482.304324,VS0,VE1141' }
+40 verbose headers   'x-timer': 'S1438360069.595543,VS0,VE390' }
 41 error publish Failed PUT 403
-42 error Error: "You cannot publish over the previously published version 0.0.3." : sca.js
+42 error Error: "You cannot publish over the previously published version 0.0.3." : service-component
 42 error     at RegClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:308:14)
 42 error     at Request._callback (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:246:65)
 42 error     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/request.js:236:22)
@@ -108,7 +105,7 @@
 43 error     <http://github.com/npm/npm/issues>
 44 error System Linux 3.13.0-45-generic
 45 error command "/usr/bin/node" "/usr/bin/npm" "publish"
-46 error cwd /home/mauro/dev/sca
+46 error cwd /home/mauro/dev/service-component
 47 error node -v v0.10.36
 48 error npm -v 1.4.28
 49 verbose exit [ 1, true ]
