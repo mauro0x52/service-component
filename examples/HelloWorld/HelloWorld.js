@@ -1,2 +1,2 @@
-var SCA = require('./../../sca.js');
+var SCA = require('./../../service-component.js');
 var HelloWorld = new SCA.Composite('HelloWorld');

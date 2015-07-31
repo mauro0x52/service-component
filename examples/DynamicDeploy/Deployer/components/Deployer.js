@@ -1,4 +1,4 @@
-var SCA = require('./../../../../sca.js');
+var SCA = require('./../../../../service-component.js');
 var Deployer = new SCA.Component('Deployer');
 var fork = require('child_process').fork;
 var fs = require('fs');

@@ -1,4 +1,4 @@
-var SCA = require('./../../../sca.js');
+var SCA = require('./../../../service-component.js');
 var fs = require('fs');
 
 var file = fs.readFileSync('./composite.json.orig', 'utf8');

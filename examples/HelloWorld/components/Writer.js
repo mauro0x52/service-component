@@ -1,4 +1,4 @@
-var SCA = require('./../../../sca.js');
+var SCA = require('./../../../service-component.js');
 var Writer = new SCA.Component('Writer');
 
 Writer.services.write = function (request, reply) {

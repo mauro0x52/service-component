@@ -1,4 +1,4 @@
-var SCA = require('./../../../sca.js');
+var SCA = require('./../../../service-component.js');
 var Translator = new SCA.Component('Translator');
 
 Translator.services.translate = function (request, reply) {
