@@ -14,8 +14,8 @@ SCA is a modeling specification for composing systems according to the principle
 
 Composites, services, and their relations with components are defined in a dynamic descriptor file, so every component can be implemented regardless how it will communicate with other components.
 
-What is service-component?
---------------------------------------
+What is this framework about?
+-----------------------------
 
 It is a simple way to build SCA systems using RESTful webservices with JSON communication.
 
